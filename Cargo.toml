@@ -1,0 +1,26 @@
+[package]
+name = "hammerdown"
+version = "0.1.0"
+edition = "2021"
+authors = ["Nathan Douglas <github@darkdell.net>"]
+license = "Unlicense"
+homepage = "https://ndouglas.github.io/hammerdown/"
+repository = "https://github.com/ndouglas/hammerdown/"
+documentation = "https://ndouglas.github.io/hammerdown/"
+readme = "README.md"
+keywords = ["hammerdown"]
+default-run = "hammerdown"
+
+[lib]
+name = "hammerdown"
+path = "src/lib.rs"
+
+[[bin]]
+name = "hammerdown"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0"
+bracket-lib = "~0.8"
+clap = "3.0"
+thiserror = "1.0"

@@ -1,0 +1,13 @@
+[book]
+authors = ["Nathan Douglas"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Hammerdown"
+description = "A full usage guide for Hammerdown."
+
+[output.html]
+mathjax-support = true
+site-url = "/hammerdown/"
+git-repository-url = "https://github.com/ndouglas/hammerdown"
+git-repository-icon = "fa-github"
