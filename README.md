@@ -2,6 +2,8 @@
 
 Hammerdown is a stealth/puzzle/survival horror-based roguelike, written in Rust.
 
+![Screenshot](./screenshots/screenshot1.png)
+
 It's is a strategy-driven roguelike game that takes place in an abandoned dwarf kingdom deep within a mountain. As a hill dwarf, players must rely on their cunning, sensory awareness, and problem-solving skills to navigate through the treacherous underground realm and uncover the mysteries that lie within.
 
 I'm working through Herbert Wolverson's excellent [_Hands-on Rust_](https://pragprog.com/titles/hwrust/hands-on-rust/); I've previously worked through his [_Roguelike Tutorial_](https://bfnightly.bracketproductions.com/rustbook/). I'm using it more as a guiding light, though, not a bible.  If you see something stupid in here, it's probably mine; don't blame Herbert 🙂
