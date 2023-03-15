@@ -1,5 +1,6 @@
 use crate::prelude::*;
 
+pub mod builder;
 pub mod tile;
 pub use tile::TileList;
 pub use tile::TileType;
@@ -16,6 +17,11 @@ impl Map {
   pub fn new() -> Self {
     let tiles = TileList::default();
     Self { tiles }
+  }
+
+  /// Fill the map with a tile.
+  pub fn fill(&mut self, tile: TileType) {
+    self.tiles.fill(tile);
   }
 
   /// Render the map.

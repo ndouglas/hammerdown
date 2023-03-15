@@ -62,6 +62,19 @@ impl List {
       tile.render(ctx, (x, y));
     }
   }
+
+  /// Fill the tiles with a specified tile type.
+  pub fn fill(&mut self, tile: TileType) {
+    self.tiles.iter_mut().for_each(|t| *t = tile);
+  }
+
+  /// Set the tile at the specified coordinates.
+  pub fn set(&mut self, (x, y): (i32, i32), tile: TileType) {
+    if self.is_in_bounds((x, y)) {
+      let index = self.get_index((x, y));
+      self.tiles[index] = tile;
+    }
+  }
 }
 
 /// Default constructor.

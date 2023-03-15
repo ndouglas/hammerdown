@@ -11,10 +11,13 @@ pub struct State {
 
 impl State {
   /// Create a new game state.
-  pub fn new() -> Self {
-    let map = Map::new();
-    let player = Player::new(Point::new(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2));
-    Self { map, player }
+  fn new() -> Self {
+    let mut rng = RandomNumberGenerator::new();
+    let map_builder = MapBuilder::new(&mut rng);
+    Self {
+      map: map_builder.map,
+      player: Player::new(map_builder.player_start),
+    }
   }
 }
 
