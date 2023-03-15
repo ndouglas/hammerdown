@@ -56,11 +56,22 @@ impl List {
   }
 
   /// Render the tiles.
-  pub fn render(&self, ctx: &mut BTerm) {
-    for (index, tile) in self.tiles.iter().enumerate() {
-      let (x, y) = self.get_coordinates(index);
-      tile.render(ctx, (x, y));
+  pub fn render(&self, ctx: &mut BTerm, camera: &Camera) {
+    for y in camera.top_y..camera.bottom_y {
+      for x in camera.left_x..camera.right_x {
+        if self.is_in_bounds((x, y)) {
+          self.render_tile(ctx, camera, x, y);
+        }
+      }
     }
+  }
+
+  /// Render a single tile.
+  pub fn render_tile(&self, ctx: &mut BTerm, camera: &Camera, x: i32, y: i32) {
+    let index = self.get_index((x, y));
+    let tile = self.tiles[index];
+    let (x, y) = camera.to_screen_coordinates((x, y));
+    tile.render(ctx, (x, y));
   }
 
   /// Fill the tiles with a specified tile type.

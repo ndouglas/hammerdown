@@ -25,8 +25,9 @@ impl Map {
   }
 
   /// Render the map.
-  pub fn render(&self, ctx: &mut BTerm) {
-    self.tiles.render(ctx);
+  pub fn render(&self, ctx: &mut BTerm, camera: &Camera) {
+    ctx.set_active_console(0);
+    self.tiles.render(ctx, camera);
   }
 
   /// Determine whether the tile at the specified coordinates is navigable.
