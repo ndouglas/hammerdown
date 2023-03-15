@@ -46,6 +46,15 @@ impl List {
     self.is_in_bounds((x, y)) && self.tiles[self.get_index((x, y))].is_navigable()
   }
 
+  /// Attempt to retrieve the specified coordinates.
+  pub fn try_index(&self, xy: (i32, i32)) -> Option<usize> {
+    if !self.is_in_bounds(xy) {
+      None
+    } else {
+      Some(self.get_index(xy))
+    }
+  }
+
   /// Render the tiles.
   pub fn render(&self, ctx: &mut BTerm) {
     for (index, tile) in self.tiles.iter().enumerate() {

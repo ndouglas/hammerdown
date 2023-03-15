@@ -22,4 +22,9 @@ impl Map {
   pub fn render(&self, ctx: &mut BTerm) {
     self.tiles.render(ctx);
   }
+
+  /// Determine whether the tile at the specified coordinates is navigable.
+  pub fn is_navigable(&self, (x, y): (i32, i32)) -> bool {
+    self.tiles.is_navigable((x, y))
+  }
 }
